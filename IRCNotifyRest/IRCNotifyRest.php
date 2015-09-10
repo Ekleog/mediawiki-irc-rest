@@ -56,10 +56,11 @@ function ircnotify_rest_pagesave($article, $user, $content, $summary, $isminor, 
         if ($summary)
                 $msg .= "   ${color}15" .
                         wfMessage('ircnotifyrest-inpagename')->rawParams("$summary")->plain() .
-                        "${norm}\n   ";
+                        "${norm}\n";
         $rc = $revision ? $revision->getRecentChange() : NULL;
         if ($rc) {
                 $diff = $rc->diffLinkTrail();
+                $msg .= "   ";
                 $msg .= $diff ? wfMessage('ircnotifyrest-diff')->rawParams("$article_link?" . $diff)->plain() : wfMessage('ircnotifyrest-creation')->plain();
                 $oldlen = $rc->mAttribs['rc_old_len'];
                 $newlen = $rc->mAttribs['rc_new_len'];
@@ -67,7 +68,7 @@ function ircnotify_rest_pagesave($article, $user, $content, $summary, $isminor, 
                 $difflen = ($difflen >= 0) ? "${color}9+$difflen${norm}" : "${color}4$difflen${norm}";
                 $msg .= " ($newlen " . wfMessage('ircnotifyrest-bytes')->plain() . ") ($difflen)\n";
         } else {
-                $msg .= wfMessage('ircnotifyrest-unabletofindmoreinfo')->plain();
+                $msg .= "   " . wfMessage('ircnotifyrest-unabletofindmoreinfo')->plain();
         }
 
         ircnotify_rest_send($msg);
