@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"ilai-deutel"
+		]
+	},
+	"ircnotifyrest-desc": "Integration with node-irc-multibot",
+	"ircnotifyrest-user": "$1 has made",
+	"ircnotifyrest-minor": "a minor change",
+	"ircnotifyrest-major": "a major change",
+	"ircnotifyrest-inpagename": "in $1",
+	"ircnotifyrest-summary": "Summary : $1",
+	"ircnotifyrest-diff": "Changes : $1",
+	"ircnotifyrest-creation": "Creation :",
+	"ircnotifyrest-bytes": "bytes",
+	"ircnotifyrest-unabletofindmoreinfo": "Unable to find more information",
+	"ircnotifyrest-delete": "$1 has $2deleted$3 $4",
+	"ircnotifyrest-undelete": "$1Someone$2 has $3undeleted$4 $5",
+	"ircnotifyrest-move": "$1 has $2moved$3 $4 to $5"
+}
