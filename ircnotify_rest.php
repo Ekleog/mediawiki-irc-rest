@@ -4,6 +4,17 @@
  * Mediawiki extension designed for integration with node-irc-multibot
  */
 
+$wgExtensionCredits['other'][] = array(
+        'path' => __FILE__,
+        'name' => 'Mediawiki IRC rest',
+        'author' => array(
+                'Ekleog',
+                'Ilaï Deutel'
+        ),
+        'version'  => '1.1',
+        'url' => 'https://github.com/Ekleog/mediawiki-irc-rest',
+);
+
 $ircnotify_url = "http://node-irc-multibot.example.com:3000/ircnotify-rest-entrypoint";
 $ircnotify_key = "some-complicated-key";
 
