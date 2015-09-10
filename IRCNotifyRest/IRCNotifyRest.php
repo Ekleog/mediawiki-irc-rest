@@ -1,5 +1,7 @@
 <?php
 /**
+ * @file
+ * @ingroup Extensions
  * @author Ekleog <leo@gaspard.io>
  * Mediawiki extension designed for integration with node-irc-multibot
  */
@@ -15,8 +17,9 @@ $wgExtensionCredits['other'][] = array(
         'url' => 'https://github.com/Ekleog/mediawiki-irc-rest',
 );
 
-$ircnotify_url = "http://node-irc-multibot.example.com:3000/ircnotify-rest-entrypoint";
-$ircnotify_key = "some-complicated-key";
+//$ircnotify_url and $ircnotify_key should be defined in LocalSettings.php
+if (!isset($ircnotify_url) || !isset($ircnotify_key))
+        return;
 
 function ircnotify_rest_send($message) {
         global $ircnotify_url, $ircnotify_key;

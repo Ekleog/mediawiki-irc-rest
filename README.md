@@ -10,7 +10,13 @@ without hassle.
 Installation
 ============
 
-Just copy the file somewhere and include it from your `LocalSettings.php` file.
+Just copy the IRCNotifyRest into the `extensions/` directory and add the following lines to your `LocalSettings.php` file:
+
+```
+$ircnotify_url = "";
+$ircnotify_key = "";
+require_once "extensions/IRCNotifyRest/IRCNotifyRest.php";
+```
 
 Configuration
 =============
