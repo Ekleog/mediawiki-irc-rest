@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ekleog",
+			"ilai-deutel"
+		]
+	},
+	"ircnotifyrest-desc": "Intégration avec node-irc-multibot",
+	"ircnotifyrest-user": "$1 a fait",
+	"ircnotifyrest-minor": "un changement mineur",
+	"ircnotifyrest-major": "un changement majeur",
+	"ircnotifyrest-inpagename": "dans $1",
+	"ircnotifyrest-summary": "Commentaire : $1",
+	"ircnotifyrest-diff": "Modifications : $1",
+	"ircnotifyrest-creation": "Création :",
+	"ircnotifyrest-bytes": "octets",
+	"ircnotifyrest-unabletofindmoreinfo": "Impossible de trouver plus d'informations",
+	"ircnotifyrest-delete": "$1 a $2supprimé$3 $4",
+	"ircnotifyrest-undelete": "$1Quelqu'un$2 a $3annulé la suppression$4 de $5",
+	"ircnotifyrest-move": "$1 a $2déplacé$3 $4 vers $5"
+}

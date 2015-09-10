@@ -10,7 +10,13 @@ without hassle.
 Installation
 ============
 
-Just copy the file somewhere and include it from your `LocalSettings.php` file.
+Just copy the IRCNotifyRest into the `extensions/` directory and add the following lines to your `LocalSettings.php` file:
+
+```
+$ircnotify_url = "";
+$ircnotify_key = "";
+require_once "extensions/IRCNotifyRest/IRCNotifyRest.php";
+```
 
 Configuration
 =============
@@ -22,8 +28,7 @@ There are three things you will want to configure:
 * `$ircnotify_key` is the token you have set in node-irc-multibot's bot.yml
 
 * If want to translate the messages (currently displayed in French given it is
-the language I am using it with), you will want to edit everything appended to
-`$msg` in `ircnotify_rest_pagesave`, and to change the parameter to
-`ircnotify_rest_send` in `ircnotify_rest_delete`, `ircnotify_rest_undelete`
-and `ircnotify_rest_move`. Besides, there are a number of free online
-translators that should help you tackle with French. ;)
+the language of the wiki we are using it with), create a new JSON file in
+`IRCNotifyRest/i18n/` (e.g., `IRCNotifyRest/i18n/en.json`), copy and paste the
+content from an existing one (e.g., `IRCNotifyRest/i18n/fr.json`) and
+enjoy translating ;)
