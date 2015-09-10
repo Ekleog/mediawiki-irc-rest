@@ -2,7 +2,8 @@
 /**
  * @file
  * @ingroup Extensions
- * @author Ekleog <leo@gaspard.io>
+ * @author Léo Gaspard (Ekleog) <leo@gaspard.io>
+ * @author Ilaï Deutel
  * Mediawiki extension designed for integration with node-irc-multibot
  */
 
@@ -10,7 +11,7 @@ $wgExtensionCredits['other'][] = array(
         'path' => __FILE__,
         'name' => 'IRC Notify Rest',
         'author' => array(
-                'Ekleog',
+                'Léo Gaspard',
                 'Ilaï Deutel'
         ),
         'version' => '1.1',
