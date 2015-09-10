@@ -37,11 +37,11 @@ function ircnotify_rest_pagesave($article, $user, $content, $summary, $isminor, 
                 "[${under}$article_link${norm}]\n";
         if ($summary)
                 $msg .= "   ${color}15Commentaire: $summary${norm}\n";
-        if ($revision) {
-                $rc = $revision->getRecentChange();
+        $rc = $revision ? $revision->getRecentChange() : NULL;
+        if ($rc) {
                 $diff = $rc->diffLinkTrail();
                 if ($diff)
-                        $msg .= "   Modifications : $article_link?" . $rc->diffLinkTrail();
+                        $msg .= "   Modifications : $article_link?" . $diff;
                 else
                         $msg .= "   Création :";
                 $oldlen = $rc->mAttribs['rc_old_len'];
