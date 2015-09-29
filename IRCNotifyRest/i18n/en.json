@@ -20,9 +20,9 @@
     "ircnotifyrest-creation": "   Creation ($1 bytes) ($2)",
     "ircnotifyrest-unabletofindmoreinfo": "   Unable to find more information",
 
-    "ircnotifyrest-delete": "\u00037\u0002$1\u000F has \u00034deleted\u000F \u001F$2\u000F",
+    "ircnotifyrest-delete": "\u00037\u0002$1\u000F has \u00034deleted\u000F \u001F$2\u000F\n   Reason: \"$3\"",
 
-    "ircnotifyrest-undelete": "\u00037\u0002Someone\u000F has \u00039undeleted\u000F \u001F$1\u000F",
+    "ircnotifyrest-undelete": "\u00037\u0002Someone\u000F has \u00039undeleted\u000F \u001F$1\u000F\n   Reason: \"$2\"",
 
-    "ircnotifyrest-move": "\u00037\u0002$1\u000F has \u000315moved\u000F \u001F$2\u000F to \u001F$3\u000F"
+    "ircnotifyrest-move": "\u00037\u0002$1\u000F has \u000315moved\u000F \u001F$2\u000F to \u001F$3\u000F\n   Reason: \"$4\""
 }

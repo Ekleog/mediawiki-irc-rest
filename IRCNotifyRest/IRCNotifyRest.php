@@ -81,21 +81,23 @@ function ircnotify_rest_pagesave($article, $user, $content, $summary, $isminor, 
 }
 
 function ircnotify_rest_delete($article, $user, $reason, $id, $content, $logEntry) {
-    $article_link = $article->getTitle()->getFullURL();
+    $reason = $reason ? $reason : '';
     ircnotify_rest_send(wfMessage('ircnotifyrest-delete')
-                        ->rawParams($user, $article_link)
+                        ->rawParams($user, $article->getTitle()->getFullURL(), $reason)
                         ->plain());
 }
 
 function ircnotify_rest_undelete($title, $create, $comment, $oldPageId) {
+    $comment = $comment ? $comment : '';
     ircnotify_rest_send(wfMessage('ircnotifyrest-undelete')
-                        ->rawParams($title->getFullURL())
+                        ->rawParams($title->getFullURL(), $comment)
                         ->plain());
 }
 
 function ircnotify_rest_move($title, $newTitle, $user, $oldid, $newid, $reason = null) {
+    $reason = $reason ? $reason : '';
     ircnotify_rest_send(wfMessage('ircnotifyrest-move')
-                        ->rawParams($user, $title->getFullURL(), $newTitle->getFullURL())
+                        ->rawParams($user, $title->getFullURL(), $newTitle->getFullURL(), $reason)
                         ->plain());
 }
 
