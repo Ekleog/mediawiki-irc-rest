@@ -55,7 +55,7 @@ function ircnotify_rest_pagesave($article, $user, $content, $summary, $isminor, 
                " [${under}$article_link${norm}]\n";
         if ($summary)
                 $msg .= "   ${color}15" .
-                        wfMessage('ircnotifyrest-inpagename')->rawParams("$summary")->plain() .
+                        wfMessage('ircnotifyrest-summary')->rawParams("$summary")->plain() .
                         "${norm}\n";
         $rc = $revision ? $revision->getRecentChange() : NULL;
         if ($rc) {
