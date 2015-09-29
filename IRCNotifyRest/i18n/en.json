@@ -1,20 +1,28 @@
 {
-	"@metadata": {
-		"authors": [
-			"ilai-deutel"
-		]
-	},
-	"ircnotifyrest-desc": "Integration with node-irc-multibot",
-	"ircnotifyrest-user": "$1 has made",
-	"ircnotifyrest-minor": "a minor change",
-	"ircnotifyrest-major": "a major change",
-	"ircnotifyrest-inpagename": "in $1",
-	"ircnotifyrest-summary": "Summary : $1",
-	"ircnotifyrest-diff": "Changes : $1",
-	"ircnotifyrest-creation": "Creation :",
-	"ircnotifyrest-bytes": "bytes",
-	"ircnotifyrest-unabletofindmoreinfo": "Unable to find more information",
-	"ircnotifyrest-delete": "$1 has $2deleted$3 $4",
-	"ircnotifyrest-undelete": "$1Someone$2 has $3undeleted$4 $5",
-	"ircnotifyrest-move": "$1 has $2moved$3 $4 to $5"
+    "@metadata": {
+        "authors": [
+            "ilai-deutel",
+            "Ekleog"
+        ]
+    },
+    "ircnotifyrest-___comment1___": "\u0003 + color code: color change",
+    "ircnotifyrest-___comment2___": "\u0002: bold",
+    "ircnotifyrest-___comment3___": "\u001F: underline",
+    "ircnotifyrest-___comment4___": "\u000F: back to normal",
+
+    "ircnotifyrest-desc": "Integration with node-irc-multibot",
+
+    "ircnotifyrest-minor": "minor",
+    "ircnotifyrest-major": "major",
+    "ircnotifyrest-pagesave": "\u00037\u0002$1\u000F has made \u00036a $2 change\u000F in \u000311\u0002$3\u000F [\u001F$4\u000F]\n",
+    "ircnotifyrest-summary": "   \u000315Summary: $1\u000F\n",
+    "ircnotifyrest-diff": "   Changes : $1 ($2 bytes) ($3)",
+    "ircnotifyrest-creation": "   Creation ($1 bytes) ($2)",
+    "ircnotifyrest-unabletofindmoreinfo": "   Unable to find more information",
+
+    "ircnotifyrest-delete": "\u00037\u0002$1\u000F has \u00034deleted\u000F \u001F$2\u000F",
+
+    "ircnotifyrest-undelete": "\u00037\u0002Someone\u000F has \u00039undeleted\u000F \u001F$1\u000F",
+
+    "ircnotifyrest-move": "\u00037\u0002$1\u000F has \u000315moved\u000F \u001F$2\u000F to \u001F$3\u000F"
 }

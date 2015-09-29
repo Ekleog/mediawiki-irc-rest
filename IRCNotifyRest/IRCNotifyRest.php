@@ -45,66 +45,57 @@ function ircnotify_rest_send($message) {
 function ircnotify_rest_pagesave($article, $user, $content, $summary, $isminor, $iswatch, $section, $flags, $revision, $status, $baseRevId) {
         $article_link = $article->getTitle()->getFullURL();
 
-        $color = "\x03";
-        $bold  = "\x02";
-        $under = "\x1F";
-        $norm  = "\x0F";
-        $msg = wfMessage('ircnotifyrest-user')->rawParams("${color}7${bold}$user${norm}")->plain() .
-               " ${color}6" . wfMessage('ircnotifyrest-' . ($isminor ? 'minor' : 'major')) . "${norm} " .
-               wfMessage('ircnotifyrest-inpagename')->rawParams("${color}11${bold}$article->mTitle${norm}")->plain() .
-               " [${under}$article_link${norm}]\n";
+        $msg = wfMessage('ircnotifyrest-pagesave')->rawParams(
+            $user,
+            wfMessage('ircnotifyrest-' . ($isminor ? 'minor' : 'major'))->plain(),
+            $article->mTitle,
+            $article_link
+        )->plain();
+
         if ($summary)
-                $msg .= "   ${color}15" .
-                        wfMessage('ircnotifyrest-summary')->rawParams("$summary")->plain() .
-                        "${norm}\n";
+                $msg .= wfMessage('ircnotifyrest-summary')->rawParams("$summary")->plain();
+
         $rc = $revision ? $revision->getRecentChange() : NULL;
         if ($rc) {
                 $diff = $rc->diffLinkTrail();
-                $msg .= "   ";
-                $msg .= $diff ? wfMessage('ircnotifyrest-diff')->rawParams("$article_link?" . $diff)->plain() : wfMessage('ircnotifyrest-creation')->plain();
                 $oldlen = $rc->mAttribs['rc_old_len'];
                 $newlen = $rc->mAttribs['rc_new_len'];
                 $difflen = $newlen - $oldlen;
-                $difflen = ($difflen >= 0) ? "${color}9+$difflen${norm}" : "${color}4$difflen${norm}";
-                $msg .= " ($newlen " . wfMessage('ircnotifyrest-bytes')->plain() . ") ($difflen)\n";
+                $difflen = ($difflen >= 0) ? "\x039+$difflen\x0F" : "\x034$difflen\x0F";
+
+                $msg .= $diff
+                    ? wfMessage('ircnotifyrest-diff')->rawParams(
+                        "$article_link?" . $diff,
+                        $newlen,
+                        $difflen
+                    )->plain()
+                    : wfMessage('ircnotifyrest-creation')->rawParams(
+                        $newlen,
+                        $difflen
+                    )->plain();
         } else {
-                $msg .= "   " . wfMessage('ircnotifyrest-unabletofindmoreinfo')->plain();
+                $msg .= wfMessage('ircnotifyrest-unabletofindmoreinfo')->plain();
         }
 
         ircnotify_rest_send($msg);
 }
 
 function ircnotify_rest_delete($article, $user, $reason, $id, $content, $logEntry) {
-        $color = "\x03";
-        $bold  = "\x02";
-        $under = "\x1F";
-        $norm  = "\x0F";
         $article_link = $article->getTitle()->getFullURL();
         ircnotify_rest_send(wfMessage('ircnotifyrest-delete')
-                            ->rawParams("${color}7${bold}$user${norm}", "${color}4", "${norm}", "${under}$article_link${norm}")
+                            ->rawParams($user, $article_link)
                             ->plain());
 }
 
 function ircnotify_rest_undelete($title, $create, $comment, $oldPageId) {
-        $color = "\x03";
-        $bold  = "\x02";
-        $under = "\x1F";
-        $norm  = "\x0F";
-        $article_link = $title->getFullURL();
         ircnotify_rest_send(wfMessage('ircnotifyrest-undelete')
-                            ->rawParams("${color}7${bold}", "${norm}", "${color}9", "${norm}", "${under}$article_link${norm}")
+                            ->rawParams($title->getFullURL())
                             ->plain());
 }
 
 function ircnotify_rest_move($title, $newTitle, $user, $oldid, $newid, $reason = null) {
-        $color = "\x03";
-        $bold  = "\x02";
-        $under = "\x1F";
-        $norm  = "\x0F";
-        $old_link = $title->getFullURL();
-        $new_link = $newTitle->getFullURL();
         ircnotify_rest_send(wfMessage('ircnotifyrest-move')
-                            ->rawParams("${color}7${bold}$user${norm}", "${color}15", "${norm}", "${under}$old_link${norm}", "${under}$new_link${norm}")
+                            ->rawParams($user, $title->getFullURL(), $newTitle->getFullURL())
                             ->plain());
 }
 

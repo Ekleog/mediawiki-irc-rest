@@ -1,21 +1,28 @@
 {
-	"@metadata": {
-		"authors": [
-			"Ekleog",
-			"ilai-deutel"
-		]
-	},
-	"ircnotifyrest-desc": "Intégration avec node-irc-multibot",
-	"ircnotifyrest-user": "$1 a fait",
-	"ircnotifyrest-minor": "un changement mineur",
-	"ircnotifyrest-major": "un changement majeur",
-	"ircnotifyrest-inpagename": "dans $1",
-	"ircnotifyrest-summary": "Commentaire : $1",
-	"ircnotifyrest-diff": "Modifications : $1",
-	"ircnotifyrest-creation": "Création :",
-	"ircnotifyrest-bytes": "octets",
-	"ircnotifyrest-unabletofindmoreinfo": "Impossible de trouver plus d'informations",
-	"ircnotifyrest-delete": "$1 a $2supprimé$3 $4",
-	"ircnotifyrest-undelete": "$1Quelqu'un$2 a $3annulé la suppression$4 de $5",
-	"ircnotifyrest-move": "$1 a $2déplacé$3 $4 vers $5"
+    "@metadata": {
+        "authors": [
+            "Ekleog",
+            "ilai-deutel"
+        ]
+    },
+    "ircnotifyrest-___comment1___": "\u0003 + code couleur : changement de couleur",
+    "ircnotifyrest-___comment2___": "\u0002 : passage en gras",
+    "ircnotifyrest-___comment3___": "\u001F : passage en souligné",
+    "ircnotifyrest-___comment4___": "\u000F : retour à la normale",
+
+    "ircnotifyrest-desc": "Intégration avec node-irc-multibot",
+
+    "ircnotifyrest-minor": "mineur",
+    "ircnotifyrest-major": "majeur",
+    "ircnotifyrest-pagesave": "\u00037\u0002$1\u000F a fait \u00036un changement $2\u000F dans \u000311\u0002$3\u000F [\u001F$4\u000F]\n",
+    "ircnotifyrest-summary": "   \u000315Commentaire : $1\u000F\n",
+    "ircnotifyrest-diff": "   Modifications : $1 ($2 octets) ($3)",
+    "ircnotifyrest-creation": "   Création ($1 octets) ($2)",
+    "ircnotifyrest-unabletofindmoreinfo": "   Impossible de trouver plus d'informations",
+
+    "ircnotifyrest-delete": "\u00037\u0002$1\u000F a \u00034supprimé\u000F \u001F$2\u000F",
+
+    "ircnotifyrest-undelete": "\u00037\u0002Quelqu'un\u000F a \u00039annulé la suppression\u000F de \u001F$1\u000F",
+
+    "ircnotifyrest-move": "\u00037\u0002$1\u000F a \u000315déplacé\u000F \u001F$2\u000F vers \u001F$3\u000F"
 }
