@@ -14,7 +14,7 @@
 
     "ircnotifyrest-minor": "minor",
     "ircnotifyrest-major": "major",
-    "ircnotifyrest-pagesave": "\u00037\u0002$1\u000F has made \u00036a $2 change\u000F in \u000311\u0002$3\u000F [\u001F$4\u000F]\n",
+    "ircnotifyrest-pagesave": "\u00037\u0002$1\u000F has made \u00036a $2 change\u000F in \u000311\u0002$3\u000F [ \u001F$4\u000F ]\n",
     "ircnotifyrest-summary": "   \u000315Summary: $1\u000F\n",
     "ircnotifyrest-diff": "   Changes : $1 ($2 bytes) ($3)",
     "ircnotifyrest-creation": "   Creation ($1 bytes) ($2)",
