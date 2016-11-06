@@ -43,7 +43,7 @@ function ircnotify_rest_send($message) {
 }
 
 function ircnotify_rest_pagesave($article, $user, $content, $summary, $isminor, $iswatch, $section, $flags, $revision, $status, $baseRevId) {
-    $article_link = $article->getTitle()->getFullURL();
+    $article_link = $article->getTitle()->getFullURL('', false, PROTO_HTTPS);
 
     $msg = wfMessage('ircnotifyrest-pagesave')->rawParams(
         $user,
@@ -83,21 +83,21 @@ function ircnotify_rest_pagesave($article, $user, $content, $summary, $isminor, 
 function ircnotify_rest_delete($article, $user, $reason, $id, $content, $logEntry) {
     $reason = $reason ? $reason : '';
     ircnotify_rest_send(wfMessage('ircnotifyrest-delete')
-                        ->rawParams($user, $article->getTitle()->getFullURL(), $reason)
+                        ->rawParams($user, $article->getTitle()->getFullURL('', false, PROTO_HTTPS), $reason)
                         ->plain());
 }
 
 function ircnotify_rest_undelete($title, $create, $comment, $oldPageId) {
     $comment = $comment ? $comment : '';
     ircnotify_rest_send(wfMessage('ircnotifyrest-undelete')
-                        ->rawParams($title->getFullURL(), $comment)
+                        ->rawParams($title->getFullURL('', false, PROTO_HTTPS), $comment)
                         ->plain());
 }
 
 function ircnotify_rest_move($title, $newTitle, $user, $oldid, $newid, $reason = null) {
     $reason = $reason ? $reason : '';
     ircnotify_rest_send(wfMessage('ircnotifyrest-move')
-                        ->rawParams($user, $title->getFullURL(), $newTitle->getFullURL(), $reason)
+                        ->rawParams($user, $title->getFullURL('', false, PROTO_HTTPS), $newTitle->getFullURL(), $reason)
                         ->plain());
 }
 
